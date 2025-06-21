@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>최근 사진</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-white text-center py-5">
+    <h2>🖼 최근 촬영된 사진</h2>
+    <hr>
+    {% if filename %}
+        <img src="{{ url_for('image', folder='manual', filename=filename) }}" class="img-fluid mt-3" style="max-height: 500px;">
+    {% else %}
+        <p>사진이 없습니다.</p>
+    {% endif %}
+    <br><br>
+    <a href="/" class="btn btn-secondary">홈으로 돌아가기</a>
+</body>
+</html>
